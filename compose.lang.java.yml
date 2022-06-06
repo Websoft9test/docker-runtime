@@ -1,0 +1,15 @@
+services:
+
+  java:
+    container_name: $APP_NAME-java
+    image: tomcat:latest
+    restart: always
+    ports:
+      - 8888:8080
+    volumes:
+      - java_conf:/usr/local/tomcat/conf
+      - java_apps:/usr/local/webapps
+
+volumes:
+  java_conf:
+  java_apps:

@@ -1,0 +1,17 @@
+services:
+
+  ruby:
+    container_name: $APP_NAME-ruby
+    image: ruby:3.1
+    restart: always
+    ports:
+      - 8892:3000
+    volumes:
+      - ruby_conf:/usr/src/app
+      - ruby_apps:/usr/src/app
+    command: "sleep 2000s"
+
+
+volumes:
+  ruby_conf:
+  ruby_apps:

@@ -7,6 +7,12 @@
 
 采用 [NginxProxyManager](https://github.com/NginxProxyManager/nginx-proxy-manager) 可视化管理工具
 
+## 服务发现
+
+```
+docker run --name consul -d -p 8500:8500 consul
+```
+
 ## 环境
 
 1. 支持多种数据库

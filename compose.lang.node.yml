@@ -1,0 +1,45 @@
+x-node-defaults: &node_defaults
+  restart: always
+  command: bash -c "cat /node_service > cmd.sh && chmod +x /cmd.sh && /cmd.sh"
+  configs:
+    - source: node_service
+
+services:
+
+  node18:
+    container_name: node-18
+    image: node:18
+    volumes: 
+      - node18:/home/node/app
+    <<: *node_defaults
+
+  node17:
+    container_name: node-17
+    image: node:17
+    volumes: 
+      - node17:/home/node/app
+    <<: *node_defaults
+
+  node16:
+    container_name: node-16
+    image: node:16
+    volumes: 
+      - node16:/home/node/app
+    <<: *node_defaults
+
+  node14:
+    container_name: node-14
+    image: node:14
+    volumes: 
+      - node14:/home/node/app
+    <<: *node_defaults
+
+volumes:
+  node14:
+  node16:
+  node17:
+  node18:
+
+configs:
+  node_service:
+    file: ./config/node/service.sh

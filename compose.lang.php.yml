@@ -1,0 +1,15 @@
+services:
+
+  java:
+    container_name: $APP_NAME-php
+    image: php:8.0-apache
+    restart: always
+    ports:
+      - 8890:80
+    volumes:
+      - php_conf:/usr/src/myapp
+      - php_apps:/var/www/html/
+
+volumes:
+  php_conf:
+  php_apps:
