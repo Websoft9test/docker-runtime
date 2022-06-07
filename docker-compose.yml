@@ -1,14 +1,13 @@
 services:
 
-  consul:
-    container_name: $APP_NAME-consul
-    image: consul
-    ports:
-      - 8500:8500
-    environment:
-      - CONSUL_BIND_INTERFACE=eth0
-    network_mode: "host"
-
-volumes:
-  db:
   app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt

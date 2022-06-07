@@ -1,0 +1,1 @@
+2022/06/07 03:42:47 [error] 367#367: *717 open() "/var/www/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 219.110.66.118, server: localhost-nginx-proxy-manager, request: "GET /boaform/admin/formLogin?username=admin&psd=admin HTTP/1.0"
