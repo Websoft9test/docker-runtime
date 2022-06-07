@@ -7,28 +7,28 @@ x-node-defaults: &node_defaults
 services:
 
   node18:
-    container_name: node-18
+    container_name: node18
     image: node:18
     volumes: 
       - node18:/home/node/app
     <<: *node_defaults
 
   node17:
-    container_name: node-17
+    container_name: node17
     image: node:17
     volumes: 
       - node17:/home/node/app
     <<: *node_defaults
 
   node16:
-    container_name: node-16
+    container_name: node16
     image: node:16
     volumes: 
       - node16:/home/node/app
     <<: *node_defaults
 
   node14:
-    container_name: node-14
+    container_name: node14
     image: node:14
     volumes: 
       - node14:/home/node/app
