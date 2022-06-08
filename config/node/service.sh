@@ -22,7 +22,7 @@ EOF
 # install pm2 and setup runtime project
 echo "Create sample and pm2 for your reference"
 yarn global add pm2
-installExpress $NODE_ROOT_PATH $NODE_APP_NAME
+installApp $NODE_ROOT_PATH $NODE_APP_NAME
 
 if [ $2  -eq "express"];then
 
