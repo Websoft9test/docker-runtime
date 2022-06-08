@@ -27,7 +27,7 @@ installApp $NODE_ROOT_PATH $NODE_APP_NAME
 if [ $NODE_APP_NAME  -eq "express"];then
   cd $NODE_ROOT_PATH
   pm2 $NODE_APP_NAME/main.js
-elif [ $2  -eq "appname"];then
+elif [ $NODE_APP_NAME  -eq "appname"];then
 
 else
   echo "Not support APP:$NODE_APP_NAME now!"
