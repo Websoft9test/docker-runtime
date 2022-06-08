@@ -28,7 +28,7 @@ if [ $NODE_APP_NAME  -eq "express"];then
   cd $NODE_ROOT_PATH
   pm2 $NODE_APP_NAME/main.js
 elif [ $NODE_APP_NAME  -eq "appname"];then
-
+  echo "start appname"
 else
   echo "Not support APP:$NODE_APP_NAME now!"
 fi
