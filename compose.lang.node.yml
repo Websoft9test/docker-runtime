@@ -3,6 +3,9 @@ x-node-defaults: &node_defaults
   command: bash -c "cat /node_service > cmd.sh && chmod +x /cmd.sh && /cmd.sh"
   configs:
     - source: node_service
+  environment:
+    - NODE_APP_NAME=${NODE_APP_NAME}
+    - NODE_ROOT_PATH=${NODE_ROOT_PATH}
 
 services:
 
