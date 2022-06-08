@@ -24,10 +24,10 @@ echo "Create sample and pm2 for your reference"
 yarn global add pm2
 installApp $NODE_ROOT_PATH $NODE_APP_NAME
 
-if [ $NODE_APP_NAME  -eq "express"];then
+if [ $NODE_APP_NAME  == "express" ];then
   cd $NODE_ROOT_PATH
   pm2 $NODE_APP_NAME/main.js
-elif [ $NODE_APP_NAME  -eq "appname"];then
+elif [ $NODE_APP_NAME == "appname" ];then
   echo "start appname"
 else
   echo "Not support APP:$NODE_APP_NAME now!"
