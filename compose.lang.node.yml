@@ -4,8 +4,8 @@ x-node-defaults: &node_defaults
   configs:
     - source: node_service
   environment:
-    - NODE_APP_NAME=${NODE_APP_NAME}
-    - NODE_ROOT_PATH=${NODE_ROOT_PATH}
+    - NODE_APP_NAME=${APP_NAME}
+    - NODE_ROOT_PATH=${APP_ROOT_PATH}
 
 services:
 
