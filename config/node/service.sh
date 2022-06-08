@@ -25,14 +25,14 @@ yarn global add pm2
 installApp $NODE_ROOT_PATH $NODE_APP_NAME
 
 if [ $2  -eq "express"];then
-
-elif [ $2  -eq "xxx"];then
+  cd $1
+  pm2 $2/main.js
+elif [ $2  -eq "appname"];then
 
 else
   echo "Not support APP:$2 now!"
 fi
 
-cd $1
-pm2 $2/main.js
+
 
 tail -f /dev/null
