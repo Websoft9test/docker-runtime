@@ -29,7 +29,7 @@ if [ $2  -eq "express"];then
 elif [ $2  -eq "xxx"];then
 
 else
-  echo "not support $2 now!"
+  echo "Not support APP:$2 now!"
 fi
 
 cd $1
