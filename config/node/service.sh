@@ -33,6 +33,4 @@ else
   echo "Not support APP:$NODE_APP_NAME now!"
 fi
 
-
-
 tail -f /dev/null
