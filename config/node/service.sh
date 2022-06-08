@@ -2,9 +2,9 @@
 
 installApp(){
    
-    mkdir -p $1/$2  && cd $1/$2
-    yarn add express
-
+mkdir -p $1/$2  && cd $1/$2
+echo `pwd`
+yarn add express
 cat > $1/$2/main.js <<-EOF
 const express = require("express");
 const app = express();
