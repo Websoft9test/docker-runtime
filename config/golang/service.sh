@@ -1,7 +1,7 @@
 #!/bin/bash
 
-env  GO_ROOT_PATH=/data/apps
-env  GO_APP_NAME=gin
+GO_ROOT_PATH=/data/apps
+GO_APP_NAME=gin
 
 #---------
 cd $GO_ROOT_PATH

@@ -7,6 +7,14 @@ x-ruby-defaults: &golang_defaults
 
 services:
 
+  golang1.18:
+    container_name: golang1.18
+    image: golang:1.18
+    volumes: 
+      - golang1.18:/data/apps
+    <<: *golang_defaults
+
+
   golang1.17:
     container_name: golang1.17
     image: golang:1.17

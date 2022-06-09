@@ -1,15 +1,21 @@
-services:
+x-ruby-defaults: &php_defaults
+  restart: always
+  command: bash -c "cat /php_service > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
+  working_dir: /var/www/html
+  configs:
+    - source: php_service
 
-  java:
-    container_name: $APP_NAME-php
-    image: php:8.0-apache
-    restart: always
-    ports:
-      - 8890:80
-    volumes:
-      - php_conf:/usr/src/myapp
-      - php_apps:/var/www/html/
+services:
+  php7.4:
+    container_name: php7.4
+    image: php:7.4-apache
+    volumes: 
+      - php7.4:/var/www/html
+    <<: *php_defaults
 
 volumes:
-  php_conf:
-  php_apps:
+  php7.4:
+
+configs:
+  php_service:
+    file: ./config/php/service.sh
