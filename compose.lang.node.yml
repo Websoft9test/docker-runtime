@@ -1,6 +1,6 @@
 x-node-defaults: &node_defaults
   restart: always
-  command: bash -c "cat /node_service > cmd.sh && chmod +x /cmd.sh && /cmd.sh"
+  command: bash -c "cat /node_service > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
   configs:
     - source: node_service
   environment:

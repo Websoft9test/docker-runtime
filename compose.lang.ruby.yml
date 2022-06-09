@@ -1,6 +1,6 @@
 x-ruby-defaults: &ruby_defaults
   restart: always
-  command: bash -c "cat /ruby_service > cmd.sh && chmod +x /cmd.sh && /cmd.sh"
+  command: bash -c "cat /ruby_service > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
   working_dir: /data/apps
   configs:
     - source: ruby_service

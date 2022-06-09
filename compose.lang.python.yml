@@ -1,6 +1,6 @@
 x-ruby-defaults: &python_defaults
   restart: always
-  command: bash -c "cat /python_service > cmd.sh && chmod +x /cmd.sh && /cmd.sh"
+  command: bash -c "cat /python_service > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
   working_dir: /data/apps
   configs:
     - source: python_service

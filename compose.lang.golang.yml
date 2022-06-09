@@ -1,9 +1,7 @@
 x-ruby-defaults: &golang_defaults
   restart: always
-  command: bash -c "cat /golang_service > cmd.sh && chmod +x /cmd.sh && /cmd.sh"
+  command: bash -c "cat /golang_service > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
   working_dir: /data/apps
-  command: sleep 200s
-
   configs:
     - source: golang_service
 
