@@ -2,3 +2,7 @@
 2022/06/08 04:47:19 [error] 491#491: wrong ident 48687 in DNS response for python3.9, expect 63222
 2022/06/08 04:47:19 [error] 491#491: wrong ident 38627 in DNS response for python3.9, expect 6760
 2022/06/08 09:40:28 [error] 608#608: *2640 open() "/var/www/html/echo.php" failed (2: No such file or directory), client: 5.188.210.227, server: localhost-nginx-proxy-manager, request: "GET http://5.188.210.227/echo.php HTTP/1.1", host: "5.188.210.227", referrer: "https://www.google.com/"
+2022/06/10 02:06:54 [error] 348#348: *972 open() "/var/www/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 103.170.92.44, server: localhost-nginx-proxy-manager, request: "GET /boaform/admin/formLogin?username=ec8&psd=ec8 HTTP/1.0"
+2022/06/10 19:59:45 [error] 622#622: wrong ident 5391 in DNS response for php7.4, expect 27725
+2022/06/10 19:59:45 [error] 622#622: wrong ident 24413 in DNS response for php7.4, expect 6598
+2022/06/10 23:28:59 [error] 673#673: *4786 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 96.44.162.70, server: localhost-nginx-proxy-manager, request: "HEAD /robots.txt HTTP/1.0"

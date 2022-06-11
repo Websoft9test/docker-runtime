@@ -1,7 +1,9 @@
 #!/bin/bash
 
-env  PHP_ROOT_PATH=/var/www/html
-env  PHP_APP_NAME=laravel
+PHP_ROOT_PATH=/var/www/html
+PHP_APP_NAME=laravel
+
+PHP_CLI_SERVER_WORKERS=4
 
 installComposer(){
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -12,6 +14,7 @@ php composer.phar
 mv composer.phar /usr/local/bin/composer
 apt update -y
 apt install git unzip -y
+docker-php-ext-install mysqli
 }
 
 installLaravel(){

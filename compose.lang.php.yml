@@ -6,15 +6,77 @@ x-ruby-defaults: &php_defaults
     - source: php_service
 
 services:
+
+  php8.1:
+    container_name: php8.1
+    image: php:8.1-fpm
+    volumes: 
+      - php8.1:/var/www/html
+    <<: *php_defaults
+
+  php8.0:
+    container_name: php8.0
+    image: php:8.0-fpm
+    volumes: 
+      - php8.0:/var/www/html
+    <<: *php_defaults
+
   php7.4:
     container_name: php7.4
-    image: php:7.4-apache
+    image: php:7.4-fpm
     volumes: 
       - php7.4:/var/www/html
     <<: *php_defaults
 
+  php7.3:
+    container_name: php7.3
+    image: php:7.3-fpm
+    volumes: 
+      - php7.3:/var/www/html
+    <<: *php_defaults
+
+
+  php7.2:
+    container_name: php7.2
+    image: php:7.2-fpm
+    volumes: 
+      - php7.2:/var/www/html
+    <<: *php_defaults
+
+
+  php7.1:
+    container_name: php7.1
+    image: php:7.1-fpm
+    volumes: 
+      - php7.1:/var/www/html
+    <<: *php_defaults
+
+
+  php7.0:
+    container_name: php7.0
+    image: php:7.0-fpm
+    volumes: 
+      - php7.0:/var/www/html
+    <<: *php_defaults
+
+
+  php5.6:
+    container_name: php5.6
+    image: php:5.6-fpm
+    volumes: 
+      - php5.6:/var/www/html
+    <<: *php_defaults
+
+
 volumes:
+  php8.1:
+  php8.0:
   php7.4:
+  php7.3:
+  php7.2:
+  php7.1:
+  php7.0:
+  php5.6:
 
 configs:
   php_service:

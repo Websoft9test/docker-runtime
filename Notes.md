@@ -3,6 +3,9 @@
 * 支持的环境参考：https://scalingo.com/runtimes
 * 支持的数据库参考：https://scalingo.com/databases
 
+市场分析：https://www.jetbrains.com/lp/devecosystem-2021
+搜索关键词 php  Benchmarks 
+
 ## DNS
 
 采用 [NginxProxyManager](https://github.com/NginxProxyManager/nginx-proxy-manager) 可视化管理工具
@@ -22,3 +25,11 @@ docker run --name consul -d -p 8500:8500 consul
 4. 支持单个容易部署多个应用
 
 预设全部的应用编排文件，拉取镜像
+
+### PHP
+
+缺乏 composer, git, unzip ,mysql 驱动等
+
+市场分析：
+* https://www.jetbrains.com/lp/devecosystem-2021/php/
+* https://kinsta.com/blog/php-benchmarks/
