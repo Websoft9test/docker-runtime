@@ -33,3 +33,7 @@ docker run --name consul -d -p 8500:8500 consul
 市场分析：
 * https://www.jetbrains.com/lp/devecosystem-2021/php/
 * https://kinsta.com/blog/php-benchmarks/
+
+### Java
+
+Java 万能安装工具包：https://sdkman.io/，安装多个 SDK 版本，也可以安装 java 生态中的各种工具。 

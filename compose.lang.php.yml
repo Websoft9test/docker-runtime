@@ -1,4 +1,4 @@
-x-ruby-defaults: &php_defaults
+x-php-defaults: &php_defaults
   restart: always
   command: bash -c "cat /php_service > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
   working_dir: /var/www/html
