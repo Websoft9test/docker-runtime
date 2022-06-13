@@ -37,3 +37,22 @@ docker run --name consul -d -p 8500:8500 consul
 ### Java
 
 Java 万能安装工具包：https://sdkman.io/，安装多个 SDK 版本，也可以安装 java 生态中的各种工具。 
+
+市场分析：
+
+* https://whichjdk.com/
+* https://snyk.io/jvm-ecosystem-report-2021/
+* https://www.jetbrains.com/lp/devecosystem-2021/java/
+* az webapp list-runtimes （Azure java runtime）
+
+### .NET
+
+https://hub.docker.com/_/microsoft-dotnet/
+
+.net 相当于 php, asp.net 相当于  laravel 开发框架
+
+SDK image includes:
+
+1. .NET CLI
+2. .NET runtime
+3. ASP.NET Core

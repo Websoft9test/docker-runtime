@@ -1,7 +1,7 @@
 #!/bin/bash
 
-JAVA_ROOT_PATH=/var/www/html
-JAVA_APP_NAME=laravel
+JAVA_ROOT_PATH=/data/apps
+JAVA_APP_NAME=spring
 
 
 tail -f /dev/null
