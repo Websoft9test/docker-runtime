@@ -56,3 +56,7 @@ SDK image includes:
 1. .NET CLI
 2. .NET runtime
 3. ASP.NET Core
+
+### 9panel
+
+采用运行时构建，不需提前生成镜像

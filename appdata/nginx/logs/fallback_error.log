@@ -29,3 +29,11 @@
 2022/06/13 08:36:18 [warn] 510#510: 1024 worker_connections are not enough, reusing connections
 2022/06/13 08:36:18 [alert] 510#510: 1024 worker_connections are not enough
 2022/06/13 08:36:18 [error] 510#510: *8571 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: localhost-nginx-proxy-manager, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:80/favicon.ico", host: "8.218.129.87", referrer: "http://8.218.129.87/"
+2022/06/14 00:29:25 [error] 302#302: *1 open() "/var/www/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 185.196.220.81, server: localhost-nginx-proxy-manager, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "8.210.55.73:80", referrer: "http://8.210.55.73:80/admin/login.asp"
+2022/06/14 00:49:51 [error] 302#302: *121 open() "/var/www/html/sdk" failed (2: No such file or directory), client: 47.103.41.229, server: localhost-nginx-proxy-manager, request: "POST /sdk HTTP/1.1", host: "8.210.55.73"
+2022/06/14 00:49:52 [error] 302#302: *128 open() "/var/www/html/nmaplowercheck1655167786" failed (2: No such file or directory), client: 47.103.41.229, server: localhost-nginx-proxy-manager, request: "GET /nmaplowercheck1655167786 HTTP/1.1", host: "8.210.55.73"
+2022/06/14 00:49:52 [error] 302#302: *133 open() "/var/www/html/HNAP1" failed (2: No such file or directory), client: 47.103.41.229, server: localhost-nginx-proxy-manager, request: "GET /HNAP1 HTTP/1.1", host: "8.210.55.73"
+2022/06/14 00:50:00 [error] 302#302: *139 open() "/var/www/html/evox/about" failed (2: No such file or directory), client: 47.103.41.229, server: localhost-nginx-proxy-manager, request: "GET /evox/about HTTP/1.1", host: "8.210.55.73"
+2022/06/14 00:53:32 [warn] 302#302: 1024 worker_connections are not enough, reusing connections
+2022/06/14 00:53:32 [alert] 302#302: 1024 worker_connections are not enough
+2022/06/14 00:53:32 [error] 303#303: *2117 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: localhost-nginx-proxy-manager, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:80/favicon.ico", host: "8.210.55.73", referrer: "http://8.210.55.73/"

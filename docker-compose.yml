@@ -1,8 +1,8 @@
 services:
 
-  app:
+  nginxgui:
     image: 'jc21/nginx-proxy-manager:latest'
-    container_name: nginx
+    container_name: nginxgui
     restart: unless-stopped
     ports:
       - '80:80'
@@ -11,3 +11,18 @@ services:
     volumes:
       - ./appdata/nginx:/data
       - ./appdata/letsencrypt:/etc/letsencrypt
+
+  panel:
+    build:
+      context: src
+      dockerfile: Dockerfile.9panel
+    container_name: 9panel
+    restart: unless-stopped
+    environment:
+      - RUNTIME_LANG=LNMP
+    working_dir: /usr/share/nginx/html
+    volumes:
+      - 9panel:/usr/share/nginx/html
+
+volumes:
+  9panel:
