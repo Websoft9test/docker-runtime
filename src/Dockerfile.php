@@ -73,3 +73,6 @@ RUN	apt-get install -y --no-install-recommends \
 		pdo_pgsql \
                 pgsql \
 		zip
+
+# create workdir
+RUN mkdir -p /data/apps
