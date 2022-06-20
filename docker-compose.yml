@@ -12,14 +12,14 @@ services:
       - ./appdata/nginx:/data
       - ./appdata/letsencrypt:/etc/letsencrypt
 
-  panel:
+  wizard:
     build:
       context: src
       dockerfile: Dockerfile.9panel
     container_name: 9panel
     restart: unless-stopped
     environment:
-      - RUNTIME_LANG=LNMP
+      - RUNTIME_LANG=PHP
     working_dir: /usr/share/nginx/html
     volumes:
       - 9panel:/usr/share/nginx/html

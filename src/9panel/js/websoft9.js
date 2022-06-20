@@ -9,6 +9,7 @@
 
 var set_infrastructure="PHP"
 var set_apps=["Example"];
+var db_list=["MySQL", "MariaDB", "PostgreSQL", "SQLServer", "MongoDB", "Redis"]
 
 
 //********************JSON数据区 Start********************************************** */
@@ -19,75 +20,15 @@ var set_apps=["Example"];
     "apps":"",
     "language":["PHP7.4-8.2", "PHP-FPM"],
     "os":"Linux",
-    "database":["MySQL"],
+    "database":db_list,
     "databasetool":["phpMyAdmin(Docker)"],
     "httpserver":["Nginx"],
     "tools":["winscp","cloud-installer","scanner"],
     "helpurl":"lamp"
   },
-  
+    
   {
-    "name":"LNMP",
-    "apps":"",
-    "language":["PHP"],
-    "os":"Linux",
-    "database":["MySQL"],
-    "databasetool":["phpMyAdmin(Docker)"],
-    "httpserver":["Nginx"],
-    "tools":["winscp","cloud-installer","scanner"],
-    "helpurl":"lnmp"
-  },
-	  
-  {
-    "name":"PHP&JAVA",
-    "apps":"",
-    "language":["PHP","JAVA"],
-    "os":"Linux",
-    "database":["MySQL"],
-    "databasetool":["phpMyAdmin(Docker)"],
-    "httpserver":["Nginx"],
-    "tools":["winscp","cloud-installer","scanner"],
-    "helpurl":"lnmp"
-  },
-  
-  {
-    "name":"LCMP",
-    "apps":"",
-    "language":["PHP"],
-    "os":"Linux",
-    "database":["MySQL"],
-    "databasetool":["phpMyAdmin(Docker)"],
-    "httpserver":["Caddy"],
-    "tools":["winscp","cloud-installer","scanner"],
-    "helpurl":"lcmp"
-  },
-  
-  {
-    "name":"LNMT",
-    "apps":"",
-    "language":["PHP","Java"],
-    "os":"Linux",
-    "database":["MySQL"],
-    "databasetool":["phpMyAdmin(Docker)"],
-    "httpserver":["Nginx","Tomcat"],
-    "tools":["winscp","cloud-installer","scanner"],
-    "helpurl":"lnmt"
-  },
-  
-  {
-    "name":"LANMP",
-    "apps":"",
-    "language":["PHP"],
-    "os":"Linux",
-    "database":["MySQL","MariaDB"],
-    "databasetool":["phpMyAdmin(Docker)"],
-    "httpserver":["Nginx","Apache"],
-    "tools":["winscp","cloud-installer","scanner"],
-    "helpurl":"lanmp"
-  },
-
-  {
-    "name":"Python runtime",
+    "name":"Python",
     "apps":"",
     "language":["Python"],
     "os":"Linux",
@@ -97,57 +38,9 @@ var set_apps=["Example"];
     "tools":"",
     "helpurl":"python"
   },
-  
+  	  
   {
-    "name":"Java on Tomcat runtime (Linux)",
-    "apps":"",
-    "language":["Java"],
-    "os":"Linux",
-    "database":["MySQL","MariaDB"],
-    "databasetool":["phpMyAdmin(Docker)"],
-    "httpserver":["Nginx","Tomcat"],
-    "tools":["demo"],
-    "helpurl":"java"
-  },
-  
-  {
-    "name":"Java on Tomcat (Windows)",
-    "apps":"",
-    "language":["Java"],
-    "os":"Windows",
-    "database":["MySQL","MariaDB"],
-    "databasetool":["dbForge"],
-    "httpserver":["Nginx","Tomcat"],
-    "tools":"",
-    "helpurl":"java"
-  },
-  
-  {
-    "name":"WAMP",
-    "apps":"",
-    "language":["PHP"],
-    "os":"Windows",
-    "database":["MySQL"],
-    "databasetool":["phpMyAdmin","dbForge"],
-    "httpserver":["Apache"],
-    "tools":["winscp","cloud-installer","scanner"],
-    "helpurl":"wamp"
-  },
-
-  {
-    "name":"Node.js runtime(Linux)",
-    "apps":"",
-    "language":["Node.js"],
-    "os":"Linux",
-    "database":["MySQL","MongoDB"],
-    "databasetool":["phpMyAdmin(Docker)","AdminMongo(Docker)"],
-    "httpserver":["Nginx"],
-    "tools":"",
-    "helpurl":"nodejs"
-  },
-	  
-  {
-    "name":"Ruby Runtime",
+    "name":"Ruby",
     "apps":"",
     "language":["Ruby","Node.js"],
     "os":"Linux",
@@ -156,165 +49,22 @@ var set_apps=["Example"];
     "httpserver":["Nginx"],
     "tools":"",
     "helpurl":"ruby"
-  },
-  
-  {
-    "name":"WAMPServer",
-    "apps":"",
-    "language":["PHP"],
-    "os":"Windows",
-    "database":["MySQL"],
-    "databasetool":["phpMyAdmin","dbForge"],
-    "httpserver":["Apache"],
-    "tools":["winscp","cloud-installer","scanner"],
-    "helpurl":"wampserver"
-  },
-  
-  {
-    "name":"XAMPP",
-    "apps":"",
-    "language":["PHP","JAVA"],
-    "os":"Windows",
-    "database":["MySQL"],
-    "databasetool":["phpMyAdmin"],
-    "httpserver":["Apache","Tomcat"],
-    "tools":["winscp","cloud-installer","scanner"],
-    "helpurl":"xampp"
-  },
-  
-  {
-    "name":"IIS",
-    "apps":"",
-    "language":["PHP",".NET","Java"],
-    "os":"Windows",
-    "database":["MySQL","SQLServer Express"],
-    "databasetool":["phpMyAdmin","SQL Server Managerment Studio"],
-    "httpserver":["IIS","Tomcat"],
-    "tools":["winscp","cloud-installer","scanner"],
-    "helpurl":"iis"
-  },
-  
-  {
-    "name":".NET",
-    "apps":"",
-    "language":[".NET"],
-    "os":"Windows",
-    "database":["MySQL","SQLServer Express"],
-    "databasetool":["MysqlFront","SQL Server Managerment Studio"],
-    "httpserver":["IIS"],
-    "tools":"",
-    "helpurl":"iis"
-  },
-  
-  {
-    "name":"PHP ON IIS",
-    "apps":"",
-    "language":["PHP",".NET"],
-    "os":"Windows",
-    "database":["MySQL","SQLServer Express"],
-    "databasetool":["phpMyAdmin","SQL Server Managerment Studio"],
-    "httpserver":["IIS"],
-    "tools":"",
-    "helpurl":"iis"
-  },
+  }
   
   ];
 
-  //安装到基础环境上的应用程序
+  //安装到基础环境上的 Web 框架
   var appslist=[
-    {"appname":"Chanzhi",     "apphelpurl":"chanzhi",     "installdr":"/"},
-    {"appname":"CmsEasy",     "apphelpurl":"cmseasy",     "installdr":"/"},
-    {"appname":"Codiad",     "apphelpurl":"codiad",     "installdr":"/"},
-    {"appname":"DzzOffice","apphelpurl":"dzzoffice","installdr":"/"},
-    {"appname":"Discuz",    "apphelpurl":"discuz",    "installdr":"/"},
     {"appname":"Django",    "apphelpurl":"python",    "installdr":"/"},
-    {"appname":"Dolibarr",    "apphelpurl":"dolibarr",    "installdr":"/"},
-    {"appname":"Drupal",    "apphelpurl":"drupal",    "installdr":"/"},
-    {"appname":"DreamFactory",    "apphelpurl":"dreamfactory",    "installdr":"/"},
-    {"appname":"EspoCRM",    "apphelpurl":"espocrm",    "installdr":"/"},
-    {"appname":"Empirecms",    "apphelpurl":"empirecms",    "installdr":"/e/install/"},
-    {"appname":"ECSHOP",     "apphelpurl":"ecshop",     "installdr":"/"},
-    {"appname":"HDWiki",    "apphelpurl":"hdwiki",    "installdr":"/"},
-    {"appname":"Joomla",    "apphelpurl":"joomla",    "installdr":"/"},
-    {"appname":"Kodcloud","apphelpurl":"kodcloud","installdr":"/"},
     {"appname":"Laravel",    "apphelpurl":"laravel",    "installdr":"/"},
-    {"appname":"MantisBT","apphelpurl":"mantisbt","installdr":"/"},
-    {"appname":"Mediawiki",    "apphelpurl":"mediawiki",    "installdr":"/"},
-    {"appname":"Mybb",     "apphelpurl":"mybb",     "installdr":"/"},
-    {"appname":"Moodle",    "apphelpurl":"moodle",    "installdr":"/"},
-    {"appname":"Magento",    "apphelpurl":"magento",    "installdr":"/"},
-    {"appname":"Matomo",    "apphelpurl":"matomo",    "installdr":"/"},
-    {"appname":"NextCloud",    "apphelpurl":"nextcloud",    "installdr":"/"},  
-    {"appname":"Opencart",    "apphelpurl":"opencart",    "installdr":"/"},
-    {"appname":"OwnCloud",    "apphelpurl":"owncloud",    "installdr":"/"},
-    {"appname":"OneThink",    "apphelpurl":"onethink",    "installdr":"/"},
-    {"appname":"Pydio",    "apphelpurl":"pydio",    "installdr":"/"},
-    {"appname":"Prestashop",    "apphelpurl":"prestashop",    "installdr":"/"},
-    {"appname":"PHPWind",     "apphelpurl":"phpwind",     "installdr":"/"},
-    {"appname":"ResourceSpace",    "apphelpurl":"resourcespace",    "installdr":"/"},
-    {"appname":"SiteFactory",     "apphelpurl":"sitefactory",     "installdr":"/"},
-    {"appname":"SiteServer",     "apphelpurl":"siteserver",     "installdr":"/"},
     {"appname":"Symfony",    "apphelpurl":"symfony",    "installdr":"/"},
-    {"appname":"SuiteCRM",    "apphelpurl":"suitecrm",    "installdr":"/"},
     {"appname":"ThinkPHP",    "apphelpurl":"thinkphp",    "installdr":"/"},
-    {"appname":"ThinkCMF",    "apphelpurl":"thinkcmf",    "installdr":"/"},
-    {"appname":"Typecho",     "apphelpurl":"typecho",     "installdr":"/"},
-    {"appname":"Testlink",     "apphelpurl":"testlink",     "installdr":"/"},
-    {"appname":"VtigerCRM",    "apphelpurl":"vtigercrm",    "installdr":"/"},
-    {"appname":"Vanilla",      "apphelpurl":"vanilla",    "installdr":"/"},
-    {"appname":"WeCenter",     "apphelpurl":"wecenter",     "installdr":"/"},
-    {"appname":"WeEngine",     "apphelpurl":"weengine",     "installdr":"/install.php"},
-    {"appname":"WordPress",    "apphelpurl":"wordpress",    "installdr":":/"},
-    {"appname":"Zentao",    "apphelpurl":"zentao",    "installdr":"/"},
-    {"appname":"Xcart",     "apphelpurl":"xcart",     "installdr":"/"},
-    {"appname":"Zdoo",    "apphelpurl":"zdoo",    "installdr":"/"},
-    {"appname":"Zurmo",    "apphelpurl":"zurmo",    "installdr":"/"},
     {"appname":"rails",    "apphelpurl":"ruby",    "installdr":"/"},
     {"appname":"Express",    "apphelpurl":"nodejs",    "installdr":"/"}
   ];
   
   //数据库GUI工具
   var dbtools=[
-  {
-    "toolname":"phpMyAdmin",
-    "db":"MySQL",
-    "tooltile":"MySQL数据库管理",
-    "toolcontent":"本镜像使用数据库Web管理面板phpMyAdmin来管理Mysql数据库",
-    "defaultaccount":"/password.txt",
-    "toollink":"/phpmyadmin",
-    "displayimage":"images/phpmyadmin.png"
-  },
-  
-  {
-    "toolname":"jspMyAdmin",
-    "db":"MySQL",
-    "tooltile":"MySQL数据库管理",
-    "toolcontent":"本镜像使用数据库Web管理面板jspMyAdmin来管理Mysql数据库",
-    "defaultaccount":"/password.txt",
-    "toollink":"/jspmyadmin",
-    "displayimage":"images/jspmyadmin.png"
-  },
-
-  {
-    "toolname":"pgMyAdmin",
-    "db":"PostgreSQL",
-    "tooltile":"PostgreSQL数据库管理",
-    "toolcontent":"本镜像内置数据库Web管理面板pgMyAdmin来管理PostgreSQL数据库",
-    "defaultaccount":"/password.txt",
-    "toollink":"/pgmyadmin",
-    "displayimage":"images/pgmyadmin.png"
-  },
-
-  {
-    "toolname":"SQL Server Managerment Studio",
-    "db":"SQLServer",
-    "tooltile":"SQLServer数据库管理",
-    "toolcontent":"本镜像内置SQL Server Managerment Studio(企业管理器)",
-    "defaultaccount":"/password.txt",
-    "toollink":"#",
-    "displayimage":"images/sqlserver.png"
-  },
-
   {
     "toolname":"phpMyAdmin(Docker)",
     "db":"MySQL",
@@ -326,23 +76,13 @@ var set_apps=["Example"];
   },
 
   {
-    "toolname":"phpPgAdmin(Docker)",
+    "toolname":"pgAdmin(Docker)",
     "db":"PostgreSQL",
-    "tooltile":"phpPgAdmin数据库管理",
-    "toolcontent":"本镜像内置数据库Web管理面板phpPgAdmin(Docker)来管理PostgreSQL数据库",
+    "tooltile":"pgAdmin数据库管理",
+    "toolcontent":"本镜像内置数据库Web管理面板pgAdmin(Docker)来管理PostgreSQL数据库",
     "defaultaccount":"/password.txt",
     "toollink":":9090",
     "displayimage":"images/phppgadmin.png"
-  },
-
-  {
-    "toolname":"AdminMongo(Docker)",
-    "db":"MongoDB",
-    "tooltile":"MongoDB数据库管理",
-    "toolcontent":"本镜像内置数据库Web管理面板AdminMongo(Docker)来管理PostgreSQL数据库",
-    "defaultaccount":"/password.txt",
-    "toollink":":9091",
-    "displayimage":"images/adminmogo.png"
   },
 
   {
@@ -421,14 +161,14 @@ const messages = {
       leftmenu_documentation: '镜像手册',
 
       index_welcome: 'Hello, 欢迎使用Websoft9公司提供的 Web Runtime!',
-      index_install: '已经安装到您的服务器，主要环境组件包括：',
+      index_install: '已经安装到您的服务器，可选的主要组件包括（不限于以下）：',
       index_qs: '快速使用：',
       index_ylike: '您可能感兴趣：',
       index_qa11: '9Panel是什么？能改名或删除吗？',
-      index_qa12: '9Panel集合数据库管理、文档和支持服务的引导页面，是镜像快速入门的工具。几乎不会占用系统资源，也不会对系统文件进行任何修改。<br>--如果想隐藏9Panel的默认页面，建议将index.html改名；<br>--如果不需要9Panel，请删除9Panel下所有内容，保留空的9Panel文件夹即可',
-      index_qa21: '本镜像能够安装多个网站或应用吗？',
-      index_qa22: '可以安装多个网站或应用，具体请参考镜像手册',
-      index_qa31: '数据库用户和密码是多少？',
+      index_qa12: '9Panel 是引导程序，便于用户快速使用 Web Runtime。<br>-- 运行命令 docker stop 9panel 隐藏它；<br>-- 运行命令 docker rm 9panel 删除它',
+      index_qa21: '本环境能够安装多个网站或应用吗？',
+      index_qa22: '可以安装多个网站或应用，具体请参考文档',
+      index_qa31: '账号和密码在哪里找？',
       index_qa32: '本镜像中所用到的数据库密码具有唯一性，基于高安全策略自动生成后存放在您的服务器中，您需要连接到您的云服务器中获取密码：<br> --Windows镜像的数据库密码存放路径： 服务器桌面/password.txt<br> --Linux镜像的数据库密码存放路径： /credentials/password.txt',
       index_qa41: '没有域名可以安装网站吗？',
       index_qa42: '如果没有可用域名，可用IP的方式安装网站。但有些软件（例如：WordPress）会将安装路径记录到数据库，将来改成域名访问需要做出修改方可使用',
@@ -475,11 +215,11 @@ const messages = {
       exm_feature3:'精准知识库',
       exm_feature4:'及时服务',
       exm_feature5:'多语言',
-      exm_breadcrumbs:'当前位置: 您的云服务器  /  示例网站首页',
+      exm_breadcrumbs:'当前位置: 您的服务器  /  示例页面',
       exm_welcome:'恭喜您，由 <a href="https://www.websoft9.com" target="_blank">Websoft9</a>提供的 {imagename} 镜像已经成功安装到您的服务器',
-      exm_to9panel:'自助使用镜像',
+      exm_to9panel:'自助使用',
       exm_to9panel_b:'进入自助向导',
-      exm_helpdesk:'人工支持',
+      exm_helpdesk:'获取人工支持',
       exm_helpdesk_b:'联系技术支持',
 
     },
@@ -679,14 +419,16 @@ else
 var i18n = new VueI18n({
 locale: NavigatorLang, // set locale zh or en
 messages, // set locale messages
-})
+}) 
 
 //首页欢迎区的镜像组件说明
 Vue.component('displayindexcomponents',{
   template:`
   <div class="jumbotron">
   <h1 class="title-1">{{ $t("message.index_welcome") }}</h1>
-  <p><b>{{ indeximages_name() }}</b> {{ $t("message.index_install") }} {{ indexcomponents_name() }}</p>                     
+  <p></br><b>{{ indeximages_name() }}</b> {{ $t("message.index_install") }} </br></p>     
+  <p>- PHP Version：{{ indexcomponents_runtime() }}</p>       
+  <p>- Databases：{{ indexcomponents_db() }}</p>              
   </div>
   `,
 
@@ -703,9 +445,12 @@ Vue.component('displayindexcomponents',{
       
     },
 
-    indexcomponents_name: function() {
-      return websoft9stack[get_indexID].os +','+ websoft9stack[get_indexID].httpserver + ','+websoft9stack[get_indexID].language +','+ websoft9stack[get_indexID].database + ','+ websoft9stack[get_indexID].databasetool;
-      
+    indexcomponents_runtime: function() {
+      return websoft9stack[get_indexID].language +'';
+    },
+
+    indexcomponents_db: function() {
+      return websoft9stack[get_indexID].database + '';
     },
   
   },

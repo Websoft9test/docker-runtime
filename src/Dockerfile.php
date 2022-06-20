@@ -1,8 +1,8 @@
-FROM php:8.1-fpm
+FROM nginx:stable-alpine
 
 LABEL maintainer="help@websoft9.com"
-LABEL version="8.1-fpm"
-LABEL description="php"
+LABEL version="1.0.1"
+LABEL description="9panel"
 
 ENV RUNTIME_LANG="LAMP"
 
