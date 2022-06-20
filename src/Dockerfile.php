@@ -71,5 +71,5 @@ RUN	apt-get install -y --no-install-recommends \
 		opcache \
 		pdo_mysql \
 		pdo_pgsql \
-    pgsql \
+                pgsql \
 		zip
