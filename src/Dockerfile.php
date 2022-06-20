@@ -9,30 +9,30 @@ ENV RUNTIME_LANG="PHP runtime"
 # install os common package
 
 RUN apt-get update && apt-get install -y \
-		acl	\
-		mosh	\
-		curl	\
-		gnupg2	\
-		ca-certificates	\
-		lsb-release	\
-		wget	\
-		openssl	\
-		unzip	\
-		bzip2	\
-		expect	\
-		at	\
-		tree	\
-		vim	\
-		screen	\
-		pwgen	\
-		git	\
-		htop	\
-		imagemagick	\
-		goaccess	\
-		jq	\
-		net-tools	\
-		mlocate	\
-		chrony
+                acl \
+                mosh \
+                curl \
+                gnupg2 \
+                ca-certificates \
+                lsb-release \
+                wget \
+                openssl \
+                unzip \
+                bzip2 \
+                expect \
+                at \
+                tree \
+                vim \
+                screen \
+                pwgen \
+                git \
+                htop \
+                imagemagick \
+                goaccess \
+                jq \
+                net-tools \
+                mlocate \
+                chrony
 
 # install php module
 
