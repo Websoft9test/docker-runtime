@@ -1,7 +1,9 @@
 x-php-defaults: &php_defaults
   restart: always
-  command: bash -c "cat /php_service > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
+  command: bash -c "cat /opt/config/service.sh > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
   working_dir: /var/www/html
+  volumes: 
+      - ./config:/opt/config
   configs:
     - source: php_service
 
