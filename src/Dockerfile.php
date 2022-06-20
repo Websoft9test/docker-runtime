@@ -91,3 +91,6 @@ RUN     composer create-project laravel/laravel laravel-app; \
 
 # create workdir
 RUN mkdir -p /data/apps
+
+# install supervisord
+RUN apt install -y supervisor
