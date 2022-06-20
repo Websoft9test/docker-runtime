@@ -4,8 +4,11 @@ x-php-defaults: &php_defaults
   working_dir: /var/www/html
   volumes: 
       - ./config:/opt/config
-  configs:
-    - source: php_service
+  build:
+    context: src
+    dockerfile: Dockerfile.php
+    args:
+      - PHP_VERSION=${APP_PHP_VERSION}
 
 services:
 
@@ -79,7 +82,3 @@ volumes:
   php7.1:
   php7.0:
   php5.6:
-
-configs:
-  php_service:
-    file: ./config/php/service.sh
