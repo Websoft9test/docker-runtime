@@ -4,11 +4,13 @@ x-php-defaults: &php_defaults
   working_dir: /var/www/html
   volumes: 
       - ./config/php:/opt/config/php
+  environment:
+      - APP_NAME=${APP_NAME}
   build:
     context: src
     dockerfile: Dockerfile.php
     args:
-      - PHP_VERSION=${APP_VERSION}
+      - APP_VERSION=${APP_VERSION}
 
 services:
 
