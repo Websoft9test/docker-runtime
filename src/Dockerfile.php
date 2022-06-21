@@ -6,7 +6,7 @@ LABEL maintainer="help@websoft9.com"
 LABEL version="${PHP_VERSION}"
 LABEL description="PHP runtime for ${PHP_VERSION}"
 
-# install os common package
+# install os common package or other image, such as drupal, wordpress,owncloud(https://github.com/docker-library)
 RUN apt-get update && apt-get install -y \
                 acl \
                 mosh \
@@ -31,47 +31,55 @@ RUN apt-get update && apt-get install -y \
                 jq \
                 net-tools \
                 mlocate \
-                chrony
-
-# install php module(compare role_php and show list by `php -m`) TODO
-
-# install php module for other image, such as drupal, wordpress,owncloud(https://github.com/docker-library)
-RUN apt-get install -y --no-install-recommends \
+                chrony \
+                gnupg dirmngr \
+		ghostscript \
 		libfreetype6-dev \
 		libjpeg-dev \
 		libpng-dev \
 		libpq-dev \
 		libwebp-dev \
 		libzip-dev \
-		gnupg dirmngr \
 		libcurl4-openssl-dev \
 		libicu-dev \
 		libldap2-dev \
 		libmemcached-dev \
-		libxml2-dev \
-		unzip \
-# Ghostscript is required for rendering PDF previews
-		ghostscript \
-	; \
-	\
-	docker-php-ext-configure gd \
+		libxml2-dev
+
+# install php module for other image, such as drupal, wordpress,owncloud(https://github.com/docker-library)
+RUN docker-php-ext-configure gd \
 		--with-freetype \
 		--with-jpeg=/usr \
 		--with-webp \
 	; \
 	\
 	docker-php-ext-install -j "$(nproc)" \
+                apcu \
 		bcmath \
+		bz2 \
 		exif \
+		imagick \
+		imap \
 		intl \
+                geoip \
 		gd \
 		ldap \
+		mcrypt \
 		pcntl \
+		mcrypt \
+		memcache \
+		mongodb \
+		odbc \
 		opcache \
 		pdo_mysql \
 		pdo_pgsql \
                 pgsql \
                 mysqli \
+                redis \
+                snmp \
+                soap \
+                tidy \
+                xmlrpc \
 		zip
 
 # set recommended PHP.ini settings
