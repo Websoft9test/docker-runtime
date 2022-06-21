@@ -88,8 +88,9 @@ RUN     composer create-project laravel/laravel laravel-app; \
         composer create-project symfony/skeleton:"6.1.*" symfony_app; \
         composer create-project --prefer-dist yiisoft/yii2-app-basic yii-app
 
-# create workdir
-RUN mkdir -p /data/apps
+# create softlink of workdir
+RUN mkdir -p /data/apps; \
+    ln -sf /var/www/html/* /data/apps
 
 # install supervisord
 RUN apt install -y supervisor
