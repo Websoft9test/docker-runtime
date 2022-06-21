@@ -5,9 +5,7 @@ chmod +x /etc/supervisor/conf.d/supervisord.conf
 
 # edit supervisord.conf
 # sed -i "s/autostart=*./autostart=false/g" /etc/supervisor/conf.d/supervisord.conf
-
-# access app workdir
-cd $APP_NAME-app
+echo $PHP_APP
 
 # start by supervisord
 /usr/bin/supervisord
