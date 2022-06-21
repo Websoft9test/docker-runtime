@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y \
 # install php module(compare role_php and show list by `php -m`) TODO
 
 # install php module for other image, such as drupal, wordpress,owncloud(https://github.com/docker-library)
-RUN	apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
 		libfreetype6-dev \
 		libjpeg-dev \
 		libpng-dev \
@@ -74,20 +74,26 @@ RUN	apt-get install -y --no-install-recommends \
                 mysqli \
 		zip
 
+# set recommended PHP.ini settings
+# see https://secure.php.net/manual/en/opcache.installation.php
+RUN { \
+		echo 'opcache.memory_consumption=128'; \
+		echo 'opcache.interned_strings_buffer=8'; \
+		echo 'opcache.max_accelerated_files=4000'; \
+		echo 'opcache.revalidate_freq=60'; \
+		echo 'opcache.fast_shutdown=1'; \
+	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+
 # install composer
-RUN     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"; \
-        php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"; \
-        php composer-setup.php; \
-        php -r "unlink('composer-setup.php')"; \
-        php composer.phar; \
-        mv composer.phar /usr/local/bin/composer
+# COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
+COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
 
 # install Laravel,ThinkPHP,Symfony,Yii
-RUN     composer create-project laravel/laravel mylaravel; \
-        composer create-project topthink/think mythinkphp; \
-        composer create-project symfony/skeleton mysymfony; \
-        composer require webapp; \
-        composer create-project --prefer-dist yiisoft/yii2-app-basic myyii
+RUN composer create-project laravel/laravel mylaravel; \
+    composer create-project topthink/think mythinkphp; \
+    composer create-project symfony/skeleton mysymfony; \
+    composer require webapp; \
+    composer create-project --prefer-dist yiisoft/yii2-app-basic myyii
 
 # create softlink of workdir
 RUN mkdir -p /data/apps; \
