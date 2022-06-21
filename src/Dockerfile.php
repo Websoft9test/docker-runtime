@@ -83,10 +83,10 @@ RUN     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');
         mv composer.phar /usr/local/bin/composer
 
 # install Laravel,ThinkPHP,Symfony,Yii
-RUN     composer create-project laravel/laravel laravel-app; \
-        composer create-project topthink/think tp-app; \
-        composer create-project symfony/skeleton:"6.1.*" symfony-app; \
-        composer create-project --prefer-dist yiisoft/yii2-app-basic yii-app
+RUN     composer create-project laravel/laravel mylaravel; \
+        composer create-project topthink/think mythinkphp; \
+        composer create-project symfony/skeleton mysymfony; \
+        composer create-project --prefer-dist yiisoft/yii2-app-basic myyii
 
 # create softlink of workdir
 RUN mkdir -p /data/apps; \
