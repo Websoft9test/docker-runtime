@@ -84,6 +84,11 @@ RUN docker-php-ext-configure gd \
                 xmlrpc \
 		zip
 
+# install pecl packge
+RUN pecl install pear; \
+    pecl install zip; \
+    docker-php-ext-enable pear zip
+
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
 RUN { \
