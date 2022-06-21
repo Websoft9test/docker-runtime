@@ -46,7 +46,7 @@ RUN apt-get update && apt-get install -y \
 		libmemcached-dev \
 		libxml2-dev
 
-# install php module for other image, such as drupal, wordpress,owncloud(https://github.com/docker-library)
+# install php module for other image, such as drupal, wordpress,owncloud(https://github.com/docker-library) and role_php
 RUN docker-php-ext-configure gd \
 		--with-freetype \
 		--with-jpeg=/usr \
