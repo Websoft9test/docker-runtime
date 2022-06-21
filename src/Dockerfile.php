@@ -85,7 +85,7 @@ RUN     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');
 # install Laravel,ThinkPHP,Symfony,Yii
 RUN     composer create-project laravel/laravel laravel-app; \
         composer create-project topthink/think tp-app; \
-        composer create-project symfony/skeleton:"6.1.*" symfony_app; \
+        composer create-project symfony/skeleton:"6.1.*" symfony-app; \
         composer create-project --prefer-dist yiisoft/yii2-app-basic yii-app
 
 # create softlink of workdir
