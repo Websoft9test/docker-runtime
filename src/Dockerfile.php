@@ -63,6 +63,7 @@ RUN docker-php-ext-configure gd \
 		intl \
                 geoip \
 		gd \
+		gmp \
 		ldap \
 		mcrypt \
 		pcntl \
@@ -75,6 +76,7 @@ RUN docker-php-ext-configure gd \
 		pdo_pgsql \
                 pgsql \
                 mysqli \
+                recode \
                 redis \
                 snmp \
                 soap \
