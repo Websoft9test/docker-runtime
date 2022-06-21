@@ -54,40 +54,18 @@ RUN docker-php-ext-configure gd \
 	; \
 	\
 	docker-php-ext-install -j "$(nproc)" \
-                apcu \
 		bcmath \
-		bz2 \
 		exif \
-		imagick \
-		imap \
 		intl \
-                geoip \
 		gd \
-		gmp \
 		ldap \
-		mcrypt \
 		pcntl \
-		mcrypt \
-		memcache \
-		mongodb \
-		odbc \
 		opcache \
 		pdo_mysql \
 		pdo_pgsql \
                 pgsql \
                 mysqli \
-                recode \
-                redis \
-                snmp \
-                soap \
-                tidy \
-                xmlrpc \
 		zip
-
-# install pecl packge
-RUN pecl install pear; \
-    pecl install zip; \
-    docker-php-ext-enable pear zip
 
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
@@ -100,13 +78,13 @@ RUN { \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
 # install composer
-# COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
 COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
 
 # install Laravel,ThinkPHP,Symfony,Yii
 RUN composer create-project laravel/laravel mylaravel; \
     composer create-project topthink/think mythinkphp; \
     composer create-project symfony/skeleton mysymfony; \
+    cd /var/www/html/mysymfony; \
     composer require webapp; \
     composer create-project --prefer-dist yiisoft/yii2-app-basic myyii
 
