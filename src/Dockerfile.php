@@ -1,10 +1,10 @@
-ARG PHP_VERSION=${PHP_VERSION}
+ARG PHP_VERSION=${APP_VERSION}
 
-FROM php:${PHP_VERSION}-fpm
+FROM php:${APP_VERSION}-fpm
 
 LABEL maintainer="help@websoft9.com"
-LABEL version="${PHP_VERSION}"
-LABEL description="PHP runtime for ${PHP_VERSION}"
+LABEL version="${APP_VERSION}"
+LABEL description="PHP runtime for ${APP_VERSION}"
 
 # install os common package
 RUN apt-get update && apt-get install -y \
