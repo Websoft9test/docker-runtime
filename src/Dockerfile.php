@@ -1,13 +1,12 @@
-FROM php:8.1-fpm
+ARG PHP_VERSION=${PHP_VERSION:-7.4}
+
+FROM php:${PHP_VERSION}-fpm
 
 LABEL maintainer="help@websoft9.com"
-LABEL version="1.0.1"
-LABEL description="PHP runtime for 8.1"
-
-ENV RUNTIME_LANG="PHP runtime"
+LABEL version="${PHP_VERSION}"
+LABEL description="PHP runtime for ${PHP_VERSION}"
 
 # install os common package
-
 RUN apt-get update && apt-get install -y \
                 acl \
                 mosh \
@@ -34,7 +33,7 @@ RUN apt-get update && apt-get install -y \
                 mlocate \
                 chrony
 
-# install php module
+# install php module(compare role_php and show list by `php -m`) TODO
 
 # install php module for other image, such as drupal, wordpress,owncloud(https://github.com/docker-library)
 RUN	apt-get install -y --no-install-recommends \
