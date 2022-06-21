@@ -1,6 +1,6 @@
 x-php-defaults: &php_defaults
   restart: always
-  command: bash -c "cat /opt/config/php/service.sh > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
+  entrypoint: bash -c "cat /opt/config/php/service.sh > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
   working_dir: /var/www/html
   volumes: 
       - ./config/php:/opt/config/php
