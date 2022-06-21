@@ -8,7 +8,7 @@ x-php-defaults: &php_defaults
     context: src
     dockerfile: Dockerfile.php
     args:
-      - PHP_VERSION=${APP_PHP_VERSION}
+      - PHP_VERSION=${APP_VERSION}
 
 services:
 
