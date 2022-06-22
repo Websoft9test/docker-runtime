@@ -106,9 +106,6 @@ RUN pecl install mongodb; \
     echo "mcrypt" | pecl install mcrypt; \
     echo "imagick" | pecl install imagick
 
-
-
-
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
 RUN { \
@@ -127,7 +124,7 @@ RUN composer create-project laravel/laravel mylaravel; \
     composer create-project topthink/think mythinkphp; \
     composer create-project symfony/skeleton mysymfony; \
     cd /var/www/html/mysymfony; \
-    composer require symfony/skeleton; \
+    composer require webapp; \
     composer create-project --prefer-dist yiisoft/yii2-app-basic myyii
 
 # create softlink of workdir
