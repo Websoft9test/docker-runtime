@@ -55,21 +55,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		libkrb5-dev \
 		libc-client-dev \
 		libbz2-dev \
-		libxml2-dev
+		libxml2-dev || true
 
 # install php module for other image, such as drupal, wordpress,owncloud(https://github.com/docker-library) and role_php
 RUN docker-php-ext-configure gd \
 		--with-freetype \
 		--with-jpeg=/usr \
 		--with-webp \
-	; \
+	|| true; \
 	\
 	docker-php-ext-install -j "$(nproc)" \
 		bcmath \
 		exif \
 		intl \
 		gd \
-		ldap \
 		pcntl \
 		opcache \
 		pdo_mysql \
@@ -82,7 +81,8 @@ RUN docker-php-ext-configure gd \
                 gmp \
                 mysqli \
                 bz2 \
-		zip
+		zip \
+		ldap || true
 
 # config and install odbc and imap
 RUN { \
@@ -127,7 +127,7 @@ RUN composer create-project laravel/laravel mylaravel; \
     composer create-project topthink/think mythinkphp; \
     composer create-project symfony/skeleton mysymfony; \
     cd /var/www/html/mysymfony; \
-    composer require webapp; \
+    composer require symfony/skeleton; \
     composer create-project --prefer-dist yiisoft/yii2-app-basic myyii
 
 # create softlink of workdir
