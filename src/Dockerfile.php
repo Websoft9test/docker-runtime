@@ -127,12 +127,13 @@ RUN if [ ${PHP_VERSION} < 7.4 ]; \
     then \
         echo "not support symfony and yii"; \
     else  \
+        echo "intall symfony and yii"; \
         composer create-project symfony/skeleton mysymfony; \
         cd /var/www/html/mysymfony; \
         composer require webapp; \
-        composer create-project --prefer-dist yiisoft/yii2-app-basic myyii\
+        composer create-project --prefer-dist yiisoft/yii2-app-basic myyii; \
     fi \
-    && echo "install framework suucess" \
+    && echo "install framework suucess"
 
 # create softlink of workdir
 RUN mkdir -p /data/apps; \
