@@ -36,14 +36,14 @@ docker run --name consul -d -p 8500:8500 consul
 
 #### PHP Framework
 各个框架能支持的PHP版本不一样，具体如下：
-PHP5.6: ["laravel","thinkphp"]
-PHP7.0: ["laravel","thinkphp"]
-PHP7.1: ["laravel","thinkphp"]
-PHP7.2: ["laravel","thinkphp"]
-PHP7.3: ["laravel","thinkphp"]
-PHP7.4: ["laravel","thinkphp","symfony","yii"]
-PHP8.0: ["laravel","thinkphp","symfony","yii"]
-PHP8.1: ["laravel","thinkphp","symfony","yii"]
+- PHP5.6: ["laravel","thinkphp"]
+- PHP7.0: ["laravel","thinkphp"]
+- PHP7.1: ["laravel","thinkphp"]
+- PHP7.2: ["laravel","thinkphp"]
+- PHP7.3: ["laravel","thinkphp"]
+- PHP7.4: ["laravel","thinkphp","symfony","yii"]
+- PHP8.0: ["laravel","thinkphp","symfony","yii"]
+- PHP8.1: ["laravel","thinkphp","symfony","yii"]
 
 ### Java
 
