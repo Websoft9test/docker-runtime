@@ -125,7 +125,7 @@ RUN composer create-project laravel/laravel mylaravel; \
 
 RUN if [ ${PHP_VERSION} < 7.4 ]; \
     then \
-        echo "not support symfony and yii"
+        echo "not support symfony and yii"; \
     else  \
         composer create-project symfony/skeleton mysymfony; \
         cd /var/www/html/mysymfony; \
