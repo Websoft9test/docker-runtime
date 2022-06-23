@@ -123,6 +123,7 @@ COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
 RUN composer create-project laravel/laravel mylaravel; \
     composer create-project topthink/think mythinkphp
 
+# < should escape by \,otherwise, it will be regarded as redirection(echo aaa < tmp.txt) 
 RUN if [ ${PHP_VERSION} \< 7.4 ]; \
     then \
         echo "not support symfony and yii"; \
