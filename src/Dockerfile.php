@@ -121,11 +121,18 @@ COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
 
 # install Laravel,ThinkPHP,Symfony,Yii
 RUN composer create-project laravel/laravel mylaravel; \
-    composer create-project topthink/think mythinkphp; \
-    composer create-project symfony/skeleton mysymfony; \
-    cd /var/www/html/mysymfony; \
-    composer require webapp; \
-    composer create-project --prefer-dist yiisoft/yii2-app-basic myyii
+    composer create-project topthink/think mythinkphp
+
+RUN if [ ${PHP_VERSION} < 7.4 ]; \
+    then \
+        echo "not support symfony and yii"
+    else  \
+        composer create-project symfony/skeleton mysymfony; \
+        cd /var/www/html/mysymfony; \
+        composer require webapp; \
+        composer create-project --prefer-dist yiisoft/yii2-app-basic myyii\
+    fi \
+    && echo "install framework suucess" \
 
 # create softlink of workdir
 RUN mkdir -p /data/apps; \
