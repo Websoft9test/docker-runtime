@@ -34,6 +34,17 @@ docker run --name consul -d -p 8500:8500 consul
 * https://www.jetbrains.com/lp/devecosystem-2021/php/
 * https://kinsta.com/blog/php-benchmarks/
 
+#### PHP Framework
+各个框架能支持的PHP版本不一样，具体如下：
+PHP5.6: ["laravel","thinkphp"]
+PHP7.0: ["laravel","thinkphp"]
+PHP7.1: ["laravel","thinkphp"]
+PHP7.2: ["laravel","thinkphp"]
+PHP7.3: ["laravel","thinkphp"]
+PHP7.4: ["laravel","thinkphp","symfony","yii"]
+PHP8.0: ["laravel","thinkphp","symfony","yii"]
+PHP8.1: ["laravel","thinkphp","symfony","yii"]
+
 ### Java
 
 Java 万能安装工具包：https://sdkman.io/，安装多个 SDK 版本，也可以安装 java 生态中的各种工具。 
