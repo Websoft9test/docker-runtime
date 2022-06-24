@@ -132,6 +132,8 @@ RUN if [ ${PHP_VERSION} \< 7.4 ]; \
         echo "not support symfony"; \
     else  \
         echo "intall symfony"; \
+	curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' |  bash; \
+	apt install symfony-cli; \		      
         composer create-project symfony/skeleton mysymfony; \
         cd /var/www/html/mysymfony; \
         composer require webapp; \
