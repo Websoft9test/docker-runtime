@@ -119,22 +119,35 @@ RUN { \
 # install composer
 COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
 
-# install Laravel,ThinkPHP,Symfony,Yii
-RUN composer create-project laravel/laravel mylaravel; \
-    composer create-project topthink/think mythinkphp
+# install Laravel
+RUN composer create-project laravel/laravel mylaravel
 
+# install ThinkPHP
+RUN composer create-project topthink/think mythinkphp
+
+# install Symfony
 # < should escape by \,otherwise, it will be regarded as redirection(echo aaa < tmp.txt) 
 RUN if [ ${PHP_VERSION} \< 7.4 ]; \
     then \
-        echo "not support symfony and yii"; \
+        echo "not support symfony"; \
     else  \
-        echo "intall symfony and yii"; \
+        echo "intall symfony"; \
         composer create-project symfony/skeleton mysymfony; \
         cd /var/www/html/mysymfony; \
         composer require webapp; \
+    fi \
+    && echo "install symfony suucess"
+
+# install Yii
+# < should escape by \,otherwise, it will be regarded as redirection(echo aaa < tmp.txt) 
+RUN if [ ${PHP_VERSION} \< 7.4 ]; \
+    then \
+        echo "not support yii"; \
+    else  \
+        echo "intall yii"; \
         composer create-project --prefer-dist yiisoft/yii2-app-basic myyii; \
     fi \
-    && echo "install framework suucess"
+    && echo "install yii suucess"
 
 # create softlink of workdir
 RUN mkdir -p /data/apps; \
