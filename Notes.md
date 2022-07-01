@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-# Budibase
-
-* docs: https://docs.budibase.com/docs/docker-compose
-* repo: https://github.com/Budibase/budibase/tree/develop/hosting
-
-## Install
-
-Note: All the *_PORT except MAIN_PORT at .env file is no useful and we have # it
-
-
-
-=======
 # Runtime
 
 * 支持的环境参考：https://scalingo.com/runtimes
@@ -84,4 +71,3 @@ SDK image includes:
 ### 9panel
 
 采用运行时构建，不需提前生成镜像
->>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
