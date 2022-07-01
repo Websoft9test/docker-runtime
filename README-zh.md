@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # ONLYOFFICE on Docker
+=======
+# Web Runtime on Docker
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 
 ![](https://libs.websoft9.com/common/websoft9-cloud-installer.png) 
 
@@ -6,16 +10,28 @@
 
 [简体中文](/README-zh.md) | [English](/README.md) 
 
+<<<<<<< HEAD
 本项目是由 [Websoft9](https://www.websoft9.com) 研发的 **云原生程序** ，大大简化 ONLYOFFICE 复杂的安装及配置。
 
 ## 系统要求
 
 安装本项目，确保符合如下的条件（[详细参考](https://github.com/onlyoffice/docker#recommended-system-requirements)）：
+=======
+本项目是由 [Websoft9](https://www.websoft9.com) 研发的 **云原生程序** ，大大简化 Web Runtime 复杂的安装及配置。
+
+## 系统要求
+
+安装本项目，确保符合如下的条件（[详细参考](https://github.com/Websoft9/docker-runtime)）：
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 
 * **操作系统**: Red Hat, CentOS, Debian, Ubuntu 等主流 Linux等 操作系统
 * **公有云**: AWS, Azure, Google Cloud, 阿里云, 腾讯云, 华为云等20多个全球主流云
 * **私有云**: KVM, VMware, VirtualBox, OpenStack 等主流虚拟化架构
+<<<<<<< HEAD
 * **CPU架构**: Linux x86-64, ARM 32/64, Windows x86-64, IBM POWER8, x86/i686
+=======
+* **CPU架构**: Linux x86-64, ARM 32/64, x86/i686
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 * **内存**: 4GB以上
 * **CPU**: 2核以上
 * **存储**: 20GB以上
@@ -29,7 +45,11 @@
 登录 Linux，运行下面的**自动化命令**即可启动安装并显示安装结果。  
 
 ```
+<<<<<<< HEAD
 sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r template
+=======
+sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r runtime
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 
 ```
 
@@ -38,13 +58,21 @@ sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-ins
 1.生成package包
 登录 Linux，运行下面的**自动化命令**即可生成所需的package包。
 ```
+<<<<<<< HEAD
 sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r template -p
+=======
+sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r runtime -p
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 ```
 2.复制package包后安装
 
 将压缩的package包复制到想要安装的服务器或虚拟机，登录 Linux，运行下面的**自动化命令**即可启动安装并显示安装结果。
 ```
+<<<<<<< HEAD
 sudo bash install-template
+=======
+sudo bash install-runtime
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 ```
 
 ### 手动安装
@@ -57,6 +85,7 @@ sudo bash install-template
 
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
+<<<<<<< HEAD
 curl -L "https://github.com/docker/compose/releases/download/v2.1.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ln -sf /usr/local/bin/docker-compose  /usr/bin
@@ -64,39 +93,62 @@ sudo systemctl start docker
 ```
 
 #### 安装 ONLYOFFICE
+=======
+sudo systemctl enable docker
+sudo systemctl start docker
+alias docker-compose='docker compose'
+```
+
+#### 安装 Web Runtime
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 
 直接运行下面的命令快速安装应用。如果你熟悉 Docker，建议先修改 [docker-compose](docker-compose.yml) 文件以满足自己的需求
 
 ```
+<<<<<<< HEAD
 git clone --depth=1 https://github.com/Websoft9/docker-template
 cd docker-template
 echo aaa  
 echo bbb  
 # .env文件的SITE_NAME需要修改成公网IP或者域名才能被外网访问  
 # 默认启动的是ERPNext12，如果您想运行ERPNext13,只需将ERPNEXT_VERSION、FRAPPE_VERSION修改成v13  
+=======
+git clone --depth=1 https://github.com/Websoft9/docker-runtime
+cd docker-runtime
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 sudo docker-compose up -d
 ```
 
 ### 常见问题
 
+<<<<<<< HEAD
 #### 安装 ONLYOFFICE 前需要更改密码吗？
+=======
+#### 安装 Web Runtime 前需要更改密码吗？
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 
 是的, 在生产环境中，您应该在 docker-compose 文件中修改所有数据库密码和应用程序密码
 
 #### 端口冲突导致无法启动？
 
+<<<<<<< HEAD
 修改 [docker-compose](docker-compose-production.yml) 文件中冲突的端口，然后再启动容器
 
 #### 问题1  
 答案1  
 #### 问题2  
 答案2  
+=======
+修改 [docker-compose](docker-compose.yml) 文件中冲突的端口，然后再启动容器
+
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 ### 使用说明
 
 启动应用后，本地浏览器访问 URL: *`http://服务器公网IP:端口`* 进入应用。  
 
 下面是使用过程中可能需要的信息
 
+<<<<<<< HEAD
 #### 账号
 
 本应用默认安装后的管理员用户名和密码如下：
@@ -118,6 +170,15 @@ sudo docker-compose up -d
 ## 企业级支持
 
 如果需要企业级支持，请订阅我们提供的 [ONLYOFFICE 企业级支持版](https://apps.websoft9.com/template) 
+=======
+## 文档
+
+[Web Runtime 管理员手册](https://support.websoft9.com/docs/runtime)
+
+## 企业级支持
+
+如果需要企业级支持，请订阅我们提供的 [Web Runtime 企业级支持版](https://apps.websoft9.com/runtime) 
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
 
 订阅企业级产品后，您可获得：
 

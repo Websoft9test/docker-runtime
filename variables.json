@@ -1,9 +1,16 @@
 {
+<<<<<<< HEAD
   "name": "budibase",
   "trademark": "Budibase",
   "installpath": "/data/apps/budibase",
   "compose_file": "docker-compose.yml",
   "fork_url": "https://github.com/Budibase/budibase/tree/develop/hosting",
+=======
+  "name": "runtime",
+  "trademark": "Web Runtime",
+  "installpath": "/data/wwwroot/runtime",
+  "compose_file": "docker-compose.yml",
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
   "env_file": ".env",
   "requirements":{
     "cpu_arch": "Linux x86-64, ARM 32/64, x86/i686",
@@ -11,6 +18,10 @@
     "memory": "4",
     "disk": "20",
     "swap": "2",
+<<<<<<< HEAD
     "url": "https://github.com/Budibase/budibase/tree/develop/hosting"
+=======
+    "url": "https://github.com/Websoft9/docker-runtime"
+>>>>>>> 4c39ef76bde16f8a123ad92f805344339fa3445a
   }
 }
