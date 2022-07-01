@@ -1,3 +1,2 @@
-docker-compose.yml
-script/test.sh
-docker
+develop/hosting/docker-compose.yaml
+develop/hosting/.env

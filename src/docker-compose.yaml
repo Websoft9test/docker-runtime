@@ -69,7 +69,6 @@ services:
       retries: 3
 
   proxy-service:
-    container_name: $APP_NAME
     restart: unless-stopped
     ports:
       - "${MAIN_PORT}:10000"
