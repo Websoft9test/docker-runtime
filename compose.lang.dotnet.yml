@@ -36,3 +36,8 @@ volumes:
 configs:
   dotnet_service:
     file: ./config/dotnet/service.sh
+
+networks:
+  default:
+    name: ${APP_NETWORK}
+    external: true
