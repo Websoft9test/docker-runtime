@@ -86,3 +86,8 @@ volumes:
 configs:
   java_service:
     file: ./config/java/service.sh
+
+networks:
+  default:
+    name: ${APP_NETWORK}
+    external: true
