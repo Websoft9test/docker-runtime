@@ -29,3 +29,8 @@ volumes:
 configs:
   golang_service:
     file: ./config/golang/service.sh
+
+networks:
+  default:
+    name: ${APP_NETWORK}
+    external: true
