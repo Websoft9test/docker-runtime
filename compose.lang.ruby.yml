@@ -46,3 +46,8 @@ volumes:
 configs:
   ruby_service:
     file: ./config/ruby/service.sh
+
+networks:
+  default:
+    name: ${APP_NETWORK}
+    external: true
