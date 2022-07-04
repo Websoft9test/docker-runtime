@@ -27,3 +27,8 @@ volumes:
 configs:
   swift_service:
     file: ./config/swift/service.sh
+
+networks:
+  default:
+    name: ${APP_NETWORK}
+    external: true
