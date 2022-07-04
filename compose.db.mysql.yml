@@ -24,3 +24,8 @@ services:
 volumes:
   mysql_data:
   mysql_conf:
+
+networks:
+  default:
+    name: ${APP_NETWORK}
+    external: true
