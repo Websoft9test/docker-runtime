@@ -111,3 +111,8 @@ volumes:
   php7.1:
   php7.0:
   php5.6:
+
+networks:
+  default:
+    name: ${APP_NETWORK}
+    external: true
