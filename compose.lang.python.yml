@@ -53,3 +53,8 @@ volumes:
 configs:
   python_service:
     file: ./config/python/service.sh
+
+networks:
+  default:
+    name: ${APP_NETWORK}
+    external: true
